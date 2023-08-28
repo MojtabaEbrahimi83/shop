@@ -11,14 +11,11 @@ class Meta extends Model
     use HasFactory;
 
     public $timestamps = null;
-    protected $fillable=[
-        'key',
-        'value',
-        'metaable_id',
-        'metaable_type',
+    protected $fillable = [
+        'key', 'value', 'metaable_id', 'metaable_type',
     ];
 
-    public function metaable():MorphTo
+    public function metaable(): MorphTo
     {
         return $this->morphTo();
     }

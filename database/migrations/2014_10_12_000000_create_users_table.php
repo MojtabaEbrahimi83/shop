@@ -16,10 +16,12 @@ return new class extends Migration
             $table->uuid()->unique()->index();
             $table->string('full_name');
             $table->string('mobile')->unique();
+            $table->boolean('block')->default(false);
 
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
         });
